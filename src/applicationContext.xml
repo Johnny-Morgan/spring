@@ -7,8 +7,17 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Define beans here -->
+    <!-- define beans here -->
+
+    <!-- define the dependency -->
+    <bean id="myFortune"
+          class="dev.johnmorgan.springdemo.HappyFortuneService">
+    </bean>
+
     <bean id="myCoach"
-        class="dev.johnmorgan.springdemo.GAACoach">
+        class="dev.johnmorgan.springdemo.RugbyCoach">
+
+        <!-- set up constructor injection -->
+        <constructor-arg ref="myFortune"/>
     </bean>
 </beans>
